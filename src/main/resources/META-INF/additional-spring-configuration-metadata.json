@@ -1,0 +1,57 @@
+{"properties": [
+  {
+    "name": "spring.security.user.password",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.security.user.password'"
+  },
+  {
+    "name": "spring.security.user.name",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.security.user.name'"
+  },
+  {
+    "name": "fileupload.FastDFS.storage",
+    "type": "java.lang.String",
+    "description": "A description for 'fileupload.FastDFS.storage'"
+  },
+  {
+    "name": "fileupload.FastDFS.maxTotal",
+    "type": "java.lang.String",
+    "description": "A description for 'fileupload.FastDFS.maxTotal'"
+  },
+  {
+    "name": "fileupload.FastDFS.maxTotalPerKey",
+    "type": "java.lang.String",
+    "description": "A description for 'fileupload.FastDFS.maxTotalPerKey'"
+  },
+  {
+    "name": "fileupload.FastDFS.maxIdlePerKey",
+    "type": "java.lang.String",
+    "description": "A description for 'fileupload.FastDFS.maxIdlePerKey'"
+  },
+  {
+    "name": "fileupload.FastDFS.soTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'fileupload.FastDFS.soTimeout'"
+  },
+  {
+    "name": "fileupload.FastDFS.connectTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'fileupload.FastDFS.connectTimeout'"
+  },
+  {
+    "name": "fileupload.FastDFS.connectTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'fileupload.FastDFS.connectTimeout'"
+  },
+  {
+    "name": "fileupload.FastDFS.connectTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'fileupload.FastDFS.connectTimeout'"
+  },
+  {
+    "name": "fileupload.FastDFS.connectTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'fileupload.FastDFS.connectTimeout'"
+  }
+]}

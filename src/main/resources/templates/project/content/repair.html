@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>云管家——智慧校园服务平台</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap-select.css}"/> 
+    <link rel="stylesheet" th:href="@{/css/public.css}"/>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+</head>
+<style>
+	.dropdown-menu {
+    	top: 180%;
+	}
+	.selectpicker {
+    	color: #000 !important;
+	}
+	.btn{
+		color: #000 !important;
+		
+	}  
+</style>
+<body>
+    <form action="" method="" enctype="multipart/form-data" id="saveForm" role="form" >
+        <div class="cells cells_form" id="listArea">
+            <div class="cell cell_select cell_select-after">
+                <div class="cell__hd">
+                    <label for="" class="label1">　故障区域</label>
+                </div>
+                <div class="cell__bd">
+                    <select class="form-control selectpicker" name="area"  id="repairArea0" data-key="repairArea" data-launchnum="2"  data-live-search="true" required>
+                        <option value="请选择">请选择</option>
+                        <option value="教学楼">教学楼</option>
+                        <option value="公寓楼">公寓楼</option>
+                        <option value="食堂">食堂</option>
+                    </select>
+                </div>
+            </div>
+            <div class="cell">
+                <div class="cell__hd">
+                    <label class="label1">详细地址</label>
+                </div>
+                <div class="cell__bd">
+                    <input class="inputed check" data-value="详细地址" data-reqired="1" data-datavalidate="0" name="address" type="text" maxlength="100" placeholder="请输入故障详细地址" required>
+                </div>
+            </div>
+            <div class="cell cell_select cell_select-after" style="">
+                <div class="cell__hd">
+                    <label for="" class="label1">　报修项目</label>
+                </div>
+                <div class="cell__bd">
+                    <select class="form-control selectpicker" name='item' id="repairProject0" data-key="repairProject" data-launchnum="2"  data-live-search="true" required>
+                        <option value="请选择">请选择</option>
+                        <option value="水类">水类</option>
+                        <option value="电类">电类</option>
+                    </select>
+                </div>
+            </div>
+            <div class="cell">
+                <div class="cell__hd">
+                    <label class="label1">报修详细<br>情况描述</label>
+                </div>
+                <div class="cell__bd">
+                    <textarea class="inputed check" name='description' data-value="报修详细情况描述" data-reqired="1" id="repairContent" maxlength="100" placeholder="请输入报修详细" required></textarea>
+                </div>
+            </div>
+            <div class="cell">
+                <div class="cell__hd">
+                    <label class="label1">报修人</label>
+                </div>
+                <div class="cell__bd">
+                    <input class="inputed check"  data-reqired="1" data-datavalidate="0" name="fullName" type="text" maxlength="10" placeholder="请输入您的姓名" required>
+                </div>
+            </div>
+            <div class="cell">
+                <div class="cell__hd">
+                    <label class="label1">联系方式</label>
+                </div>
+                <div class="cell__bd">
+                    <input class="inputed check"  data-reqired="1" data-datavalidate="0" name="phone" type="text" maxlength="11" placeholder="请输入联系方式，方便维修师傅联系" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                </div>
+            </div>
+            <div class="cell">
+                <div class="cell__bd">
+                    <div class="uploader">
+                        <div class="uploader__hd">
+                            <p class="uploader__title">上传图片</p>
+                        </div>
+                        <div class="uploader_bd clearfix uploader_over ">
+                            <div class="repair-input-uploader" style="positon:relative;"> 
+                          		<img id="imagePreview" alt="图片预览" src="../images/resizeApi.png" width='96px' height='96px'/>
+							    <input class="tupian" type="file" onchange="previewImage(this)" name='upFile'/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>		
+        <div class="repair-btn" id="form_sub">
+        	<input type ="submit" class="btn btn_primary" id="submitBx" style="background: #288feb;border:none;" value="报修" />
+        </div>
+    </form>
+    
+    <div class="tabbar" id="footer">
+        <a onclick="javascript:window.location.href='/record'" class="tabbar__item  bar__item" id="gggc">
+            <span style="display: inline-block;position: relative;">
+                <img src="../images/icon_square.png" alt="" class="tabbar__icon">
+                <span class="badge" style="position: absolute;top: -2px;right: -13px;"></span>
+            </span>
+            <p class="tabbar__label">广场/公告</p>
+        </a>
+        <a onclick="javascript:window.location.href='/index'" class="tabbar__item" id="wybx">
+            <span style="display: inline-block;position: relative;">
+                <img src="../images/icon_repair_active.png" alt="" class="tabbar__icon">
+                <span class="badge" style="position: absolute;top: -2px;right: -13px;"></span>
+            </span>
+            <p class="tabbar__label">我要报修</p>
+        </a>
+        <a onclick="javascript:window.location.href='/records'" class="tabbar__item" id="bxjl">
+             <span style="display: inline-block;position: relative;">
+                 <img src="../images/icon_record.png" alt="" class="tabbar__icon">
+                 <span class="badge badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+             </span>
+             <p class="tabbar__label">报修记录</p>
+        </a>
+    </div>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+     <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap-select.js}"></script>
+    <script type="text/javascript" th:src="@{/js/controller/repair.js}"></script>
+</body>
+</html>
+<script>
+$(".selectpicker").selectpicker('refresh');
+ //图片预览，兼容各个浏览器
+function previewImage(file) {
+   var porImg  = $(file),
+       viewImg = $('#imagePreview');
+   var image = porImg.val();
+   if (!/^\S*\.(?:png|jpe?g|bmp|gif)$/i.test(image)) {
+       layer.msg('请选择图片~', {shift: 6});
+       porImg.val("");
+       return false;
+   }
+   if (file["files"] && file["files"][0]) {
+       var reader = new FileReader();
+       reader.onload = function(evt){
+           viewImg.attr({src : evt.target.result});
+       }
+       reader.readAsDataURL(file.files[0]);
+   } else {
+       var ieImageDom = document.createElement("div");
+       var proIeImageDom = document.createElement("div");
+       $(ieImageDom).css({
+           float: 'left',
+           position: 'relative',
+           overflow: 'hidden',
+           width: '96px',
+           height: '96px'
+       }).attr({"id":"view"});
+       $(proIeImageDom).attr({"id": porImg.attr("id")});
+       porImg.parent().prepend(proIeImageDom);
+       porImg.remove();
+       file.select();
+       path = document.selection.createRange().text;
+       $(ieImageDom).css({"filter": "progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='scale',src=\"" + path + "\")"});	       
+   }
+}
+</script>

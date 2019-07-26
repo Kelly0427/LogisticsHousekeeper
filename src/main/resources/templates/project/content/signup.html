@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>云管家——智慧校园服务平台</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script> -->
+<link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" type="text/css" media="all">
+<link th:href="@{/css/snow.css}" rel="stylesheet" type="text/css" media="all" />
+<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+	<div class="snow-container">
+		<div class="snow foreground"></div>
+		<div class="snow foreground layered"></div>
+		<div class="snow middleground"></div>
+		<div class="snow middleground layered"></div>
+		<div class="snow background"></div>
+		<div class="snow background layered"></div>
+	</div>
+	<div class="top-buttons-agileinfo">
+		<a href="/login">登录</a>
+		<a href="/signup" class="active">注册</a>
+	</div>
+	<h1>云管家——智慧校园服务平台</h1>
+	<div class="main-agileits">
+		<div class="form-agile">
+			<h2 class="sub-agileits-w3layouts">注册</h2>
+				<form action="" method="" id="saveForm">
+				<input class="username" type="text" name="name" placeholder="账　　号" required="" />
+				<input class="password" type="password" name="passWord" placeholder="密　　码" required="" />
+				<input class="pwd" type="password" name="pwd" placeholder="确认密码" required="" />
+				<input class="classCode" type="text" name="classCode" placeholder="所属班级" required="" />
+				<input class="inputed check phone"   onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" data-reqired="1" data-datavalidate="1" name="phone" type="text" maxlength="11" placeholder="手机号码" required="">
+				<input class="realName" type="text" name="realName" placeholder="真实姓名" required="" />
+				<input class="role" type="text" name="role" placeholder="角　　色" required="" />
+				<div class="submit1">
+					<input id="register" type="submit" value="注　册">
+				</div>
+			</form>	
+		</div>
+	</div>
+	<div class="copyright w3-agile">
+		<p>Copyright © 2018,All Rights Reserved</p>
+	</div>
+	<script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/controller/signup.js}"></script>
+</body>
+</html>

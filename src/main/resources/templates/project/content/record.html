@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>云管家——智慧校园服务平台</title>
+    <link th:href="@{/css/timeline.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/css/public.css}" rel="stylesheet" type="text/css">
+        <link th:href="@{/css/paging.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/record.css}" rel="stylesheet" type="text/css">
+    <style>
+		  .theUl{
+		    	width:100%;
+		  }
+		  .theUl li{
+		    	position: relative;
+		  }
+          .media-box_btn {
+			    position: absolute;
+			    top: 50%;
+			    right: 0;
+			    padding: 1px 9px;
+			    border-radius: 90px;
+			    background: #ffffff;
+			    font-size: 1rem;
+          }
+          .page_div {
+			    margin-top: 20px;
+			    margin-bottom: 20px;
+			    font-size: 12px;
+			    font-family: "microsoft yahei";
+			    color: #22262E;
+			    margin-right: 10px;
+			    padding-left: 30%;
+			    box-sizing: border-box;
+		 }
+    </style>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/scroll.js}"></script>
+    <script type="text/javascript">
+        $(function(){
+            //首页大事记
+            $('.course_nr2 li').hover(function(){
+                $(this).find('.tl').slideDown(600);
+            },function(){
+                $(this).find('.tl').slideUp(400);
+            });
+            $("div.scroll-box").myScroll({
+                speed :114,
+                rowHeight : 96
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="clearfix course_nr" id="nav">
+        <ul class="course_nr2">
+            <li>
+                申请
+                <div class="tl">
+                    <h1>申请</h1>
+                    <p>　填写报修单。</p>
+                </div>
+            </li>
+            <li>
+                受理
+                <div class="tl">
+                    <h1>受理</h1>
+                    <p>　管理员审核。</p>
+                </div>
+            </li>
+            <li>
+                派工
+                <div class="tl">
+                    <h1>派工</h1>
+                    <p>　管理员派人。</p>
+                </div>
+            </li>
+            <li>
+                完工
+                <div class="tl">
+                    <h1>完工</h1>
+                    <p>　维修工修复。</p>
+                </div>
+            </li>
+            <li>
+                评价
+                <div class="tl">
+                    <h1>评价</h1>
+                    <p>　报单人评分。</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="content">
+        <div class="cells" style="line-height: 30px;margin-top: 1.17647059em;">
+            <a class="cell cell_access" href="#">
+                <div class="cell__hd"><img src="../images/icon_fwzn.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
+                <div class="cell__bd">
+                    <p class="cell__bd_title">服务指南</p>
+                </div>
+                <div class="cell__ft">
+                </div>
+            </a>
+            <a class="cell cell_access" href="#" style="line-height: 60px;">
+                <div class="cell__bd">
+                    <p>服务指南内容</p>
+                </div>
+            </a>
+        </div>
+        <div class="cells" style="line-height: 30px;margin-top: 1.17647059em;">
+            <a class="cell cell_access" href="#" id="msg">
+                <div class="cell__hd"><img src="../images/icon_gg.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
+                <div class="cell__bd">
+                    <p class="cell__bd_title">公告</p>
+                </div>
+                <div class="cell__ft">
+                </div>
+            </a>
+            <a class="cell cell_access" href="#" style="line-height: 60px;">
+                <div class="cell__bd">
+                    <p class="message">如有公告，请认真阅读。</p>
+                </div>
+            </a>
+        </div>
+        <div class="cells" style="line-height: 30px;margin-top: 1.17647059em;">
+            <a class="cell cell_access" href="#" >
+                <div class="cell__hd"><img src="../images/icon_bxxx.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
+                <div class="cell__bd">
+                    <p class="cell__bd_title">报修消息                
+                	<input type ="button" id="searchBtn" style="float:right;border:1px;background:#337ab7;border-radius:1em;width:5%;padding-top:8px;padding-bottom:8px;outline:none;" value="搜索" />
+                    <input type="text" name="stt" class="stt" style="float:right;border-radius:1em;width:10%;padding-top:5px;padding-bottom:5px;outline:none;">
+                    </p>
+                     
+                </div>
+                <div class="cell__ft">
+                </div>
+            </a>
+            <a class="cell cell_access content" href="#">  
+                          
+            </a>
+        </div>
+        <div class="contentfooter clearfix">
+		    <div id="page" class="page_div pull-right"></div>
+	    </div>
+    </div>
+    
+    <div class="tabbar" id="footer">
+        <a href="javascript:;" class="tabbar__item  bar__item" id="gggc">
+            <span style="display: inline-block;position: relative;">
+                <img src="../images/icon_square_active.png" alt="" class="tabbar__icon">
+                <span class="badge" style="position: absolute;top: -2px;right: -13px;"></span>
+            </span>
+            <p class="tabbar__label">广场/公告</p>
+
+        </a>
+        <a onclick="javascript:window.location.href='/index'" class="tabbar__item" id="wybx">
+            <span style="display: inline-block;position: relative;">
+                <img src="../images/icon_repair.png" alt="" class="tabbar__icon">
+                <span class="badge" style="position: absolute;top: -2px;right: -13px;"></span>
+            </span>
+            <p class="tabbar__label">我要报修</p>
+        </a>
+        <a onclick="javascript:window.location.href='/records'" class="tabbar__item" id="bxjl">
+             <span style="display: inline-block;position: relative;">
+                 <img src="../images/icon_record.png" alt="" class="tabbar__icon">
+                 <span class="badge badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+             </span>
+            <p class="tabbar__label">报修记录</p>
+        </a>
+    </div>
+    <div class="boxPop1" style="display: none"> 
+		<div class="tankuang1"> 
+		 	<div class="tankuang1-img"> 
+		 		<img src="../images/close.png" alt="" class="boxPop1_close"> 
+		 	</div> 	
+		 	<div class="tankuang1-body"> 
+		 		<input type ="submit" class="btn btn_primary" id="submitBx" style="background:#FF7F00;border:none;" value="发布" /> 
+		 	 	<textarea name='msg'  id="repairContent" rows="15" cols="90" style="margin-top:10px"></textarea>
+		 	</div> 
+		</div> 
+	</div> 
+    <div class="boxPop" style="display: none"> 
+		<div class="tankuang"> 
+		 	<div class="tankuang-img"> 
+		 		<img src="../images/close.png" alt="" class="boxPop_close"> 
+		 	</div> 
+		 	
+		 	<div class="tankuang-body"> 
+		 		<img src="../images/success.png" alt=""> 
+		 	<div><h3>发布成功,请前往公告栏查看信息。</h3></div> 
+		 	</div> 
+		</div> 
+	</div> 
+	<div class="boxPop2" style="display: none"> 
+		<div class="tankuang2"> 
+		 	<div class="tankuang2-img"> 
+		 		<img src="../images/close.png" alt="" class="boxPop2_close"> 
+		 	</div> 	
+		 	<div class="tankuang2-body"> 
+		 		<input type ="submit" class="btn btn_primary" id="submBtn" style="background:#FF7F00;border:none;" value="发布" /> 
+		 	 	<textarea name='msg'  id="repairCon" rows="15" cols="90" style="margin-top:10px"></textarea>
+		 	</div> 
+		</div> 
+	</div>
+	<script type="text/javascript" th:src="@{/js/controller/info.js}"></script>	
+	<script type="text/javascript" th:src="@{/js/paging.js}"></script>
+</body>
+</html>

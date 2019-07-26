@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>云管家——智慧校园服务平台</title>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/public.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/paging.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/records.css}" rel="stylesheet" type="text/css">
+</head>
+<style>
+ a:hover{
+ 
+ }
+</style>
+<body>
+<p class="topTitleP"><span>我的报修记录</span></p>
+<div class="table-responsive page-header" id="content">
+	<table class="table table-bordered table-hover">
+		<thead>
+			<th>编号</th>
+			<th>报修人员</th>
+			<th>现场图片</th>
+			<th>内容描述</th>
+			<th>详细地址</th>
+			<th>处理进度</th>
+			<th>星服务</th>
+		</thead>
+		<tbody class="tbody1">
+		</tbody>
+	</table>
+	<div class="contentfooter clearfix">
+		<div id="page" class="page_div pull-right"></div>
+	</div>
+</div>
+<div class="tabbar" id="footer">
+    <a onclick="javascript:window.location.href='/record'" class="tabbar__item  bar__item" id="gggc">
+            <span style="display: inline-block;position: relative;">
+                <img src="../images/icon_square.png" alt="" class="tabbar__icon">
+                <span class="badge" style="position: absolute;top: -2px;right: -13px;"></span>
+            </span>
+        <p class="tabbar__label">广场/公告</p>
+    </a>
+    <a onclick="javascript:window.location.href='/index'" class="tabbar__item" id="wybx">
+            <span style="display: inline-block;position: relative;">
+                <img src="../images/icon_repair.png" alt="" class="tabbar__icon">
+                <span class="badge" style="position: absolute;top: -2px;right: -13px;"></span>
+            </span>
+        <p class="tabbar__label">我要报修</p>
+    </a>
+    <a href="javascript:;" class="tabbar__item" id="bxjl">
+             <span style="display: inline-block;position: relative;">
+                 <img src="../images/icon_record_active.png" alt="" class="tabbar__icon">
+                 <span class="badge badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+             </span>
+        <p class="tabbar__label">报修记录</p>
+    </a>
+</div>
+<div class="boxPop1" style="display: none"> 
+		<div class="tankuang1"> 
+		 	<div class="tankuang1-img"> 
+		 		<img src="../images/close1.png" alt="" class="boxPop1_close"> 
+		 	</div> 	
+		 	<div class="tankuang1-body"> 
+		 		<input class="btn btn_primary" id="submitBx" style="background:#337ab7;border:none;" value="发布" /> 
+                 <div class="remark" style="width:100%">
+                	<span>评价:</span>
+                	<textarea name='msg'  id="evaluation" rows="4" cols="80" style="border-radius:0.5em;outline:none;"></textarea>
+                </div>
+                <div class="attitude" style="float:left;margin-left:30px;">
+                	<span>态度:</span>
+                        <select class="pingStar-a" style="border-radius:0.5em;outline:none;">
+                             <option value ="1">很不满意</option>
+  							 <option value ="2">不满意</option>
+                             <option value="3">一般</option>
+                             <option value="4">满意</option>
+                             <option value="5">很满意</option>
+                        </select>
+                </div>
+                <div class="speed" style="float:left;margin-left:135px;">
+                	<span>速度:</span>
+                        <select class="pingStar-s" style="border-radius:0.5em;outline:none;">
+                             <option value ="1">很不满意</option>
+  							 <option value ="2">不满意</option>
+                             <option value="3">一般</option>
+                             <option value="4">满意</option>
+                             <option value="5">很满意</option>
+                        </select>
+                </div>
+                <div class="quality" style="float:left;margin-left:133px;">
+                	<span>质量:</span>
+                        <select class="pingStar-q" style="border-radius:0.5em;outline:none;">
+                             <option value ="1">很不满意</option>
+  							 <option value ="2">不满意</option>
+                             <option value="3">一般</option>
+                             <option value="4">满意</option>
+                             <option value="5">很满意</option>
+                        </select>
+                </div>         
+		 	</div> 
+		</div> 
+	</div> 
+<script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+<script type="text/javascript" th:src=@{/js/controller/records.js}></script>
+<script type="text/javascript" th:src="@{/js/paging.js}"></script>
+<!-- <script type="text/javascript">
+
+</script> -->
+</body>
+</html>

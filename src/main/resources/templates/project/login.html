@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>云管家——智慧校园服务平台</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script> -->
+<link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" type="text/css" media="all">
+<link th:href="@{/css/snow.css}" rel="stylesheet" type="text/css" media="all" />
+<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+	<div class="snow-container">
+		<div class="snow foreground"></div>
+		<div class="snow foreground layered"></div>
+		<div class="snow middleground"></div>
+		<div class="snow middleground layered"></div>
+		<div class="snow background"></div>
+		<div class="snow background layered"></div>
+	</div>
+	<div class="top-buttons-agileinfo">
+		<a href="/login"  class="active">登录</a>
+		<a href="/signup">注册</a>
+	</div>
+	<h1>云管家——智慧校园服务平台</h1>
+	<div class="main-agileits">
+		<div class="form-agile">
+			<h2 class="sub-agileits-w3layouts">登录</h2>
+			<form th:action="@{/login}" action="/login" method="post">
+				<input class="username" type="text" name="username" placeholder="用户" required="" />
+				<input class="password" type="password" name="password" placeholder="密码" required="" />
+				<a href="#" class="forgot-w3layouts">忘记密码 ?</a>
+				<div class="submit1">
+					<input id="login" type="submit" value="登录">
+				</div>
+				<p class="p-bottom-w3ls"><a href="/signup">点击注册，</a>如果你没有帐户。</p>
+			</form>
+		</div>
+	</div>
+	<div class="copyright w3-agile">
+		<p>Copyright © 2018,All Rights Reserved</a></p>
+	</div>
+	<script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+</body>
+</html>
